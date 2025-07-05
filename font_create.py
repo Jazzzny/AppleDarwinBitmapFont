@@ -48,7 +48,8 @@ def compute_side_bearings(bitmap):
         else:
             break
 
-    return left_pad * PIXEL_SIZE, right_pad * PIXEL_SIZE
+    # remember that the raw data is flipped horizontally, so reverse the counts
+    return right_pad * PIXEL_SIZE, left_pad * PIXEL_SIZE
 
 # Make SVG for each glyph
 def make_svg(char_index, bitmap):
